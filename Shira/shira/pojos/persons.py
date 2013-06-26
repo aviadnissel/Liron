@@ -4,6 +4,9 @@ from elixir import Entity, Field, Unicode, Enum, ManyToOne, using_options
 from shira.pojos.seminar import Ken, SecondKen
 
 class Person(Entity):
+    """
+    An abstract person.
+    """
 	MALE = u'זכר'
 	FEMALE = u'נקבה'
 	using_options(inheritance='multi')
@@ -15,12 +18,18 @@ class Person(Entity):
 		return "%s %s" % (self.first_name, self.last_name)
 
 class Educative(Person):
+    """
+    An educative in the seminar.
+    """
 	using_options(inheritance='multi')
 	ken = ManyToOne('Ken')
 	second_ken = ManyToOne('SecondKen')
 	hug = ManyToOne('Hug')
 
 class Madrich(Person):
+    """
+    A madrich in the seminar.
+    """
 	using_options(inheritance='multi')
 	ken = ManyToOne('Ken')
 	second_ken = ManyToOne('SecondKen')
