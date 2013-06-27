@@ -27,10 +27,14 @@ class RandomSoftConstraint(SoftConstraint):
     """
     A soft constraint that allows random score in a certain range.
     """
-    def __init__(self, min_score, max_score):
-        self.score = -1
+    def __init__(self, constant_score, min_score, max_score):
+        self.score = constant_score
+        self.constant_score = constant_score
         self.min_score = min_score
         self.max_score = max_score
+    
+    def reset_score(self):
+        self.score = self.constant_score
         
     def calculate_random_score(self, educatives, hugs):
         self.score = random.randint(self.min_score, self.max_score)
