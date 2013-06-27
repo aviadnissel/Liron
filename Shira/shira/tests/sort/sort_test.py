@@ -1,12 +1,13 @@
 from shira.pojos.model import *
 from shira.sort.sorter import *
 
-def create_educatives_and_hugs():
+def create_small_educatives_and_hugs():
     misgav = Ken()
     misgav.name = 'Misgav'
+    
     karmiel = Ken()
     karmiel.name = 'Karmiel'
-	
+    
     aviad = Educative()
     aviad.gender = Person.MALE
     aviad.first_name = "Aviad"
@@ -28,18 +29,66 @@ def create_educatives_and_hugs():
     alon.ken = karmiel
 	
     hug1 = Hug()
-    hug1.first_name = "Hug1"
+    hug1.name = "Hug1"
     hug2 = Hug()
-    hug2.first_name = "Hug2"
+    hug2.name = "Hug2"
 	
     return [aviad, naama, inbar, alon], [hug1, hug2]
 
+def create_large_educatives_and_hugs():
+    import random
+    from shira.pojos.persons import Person
+    
+    kens = []
+    for i in xrange(20):
+        ken = Ken()
+        ken.name = "Ken " + str(i)
+        kens.append(ken)
+        
+    educatives = []
+    for i in xrange(800):
+        educative = Educative()
+        if random.randint(0, 1) == 0:
+            educative.gender = Person.MALE
+        else:
+            educative.gender = Person.FEMALE
+        educative.first_name = "educative"
+        educative.last_name = str(i)
+        educative.ken = kens[random.randint(0, 19)]
+        educatives.append(educative)
+    
+    hugs = []
+    for i in xrange(40):
+        hug = Hug()
+        hug.name = "Hug " + str(i)
+        hugs.append(hug)
+    
+    return educatives, hugs
+    
+def create_soft_constraints():
+    from shira.sort.default_constraints import *
+    gender = GenderRandomSoftConstraint(10, 10, 10)
+    size = SizeRandomSoftConstraint(100, 100, 100)
+    ken = KenRandomSoftConstraint(1, 1, 1)
+    return [gender, size, ken]
+    
 def sanity_check():
-	educatives, hugs = create_educatives_and_hugs()
-	scorer = Scorer(gender_score = 10, size_score = 100, ken_score = 1, mahoz_score = 2)
-	Sorter().assign_educatives_constant_score(educatives, hugs, scorer)
-	print hugs[0].educatives
-	print hugs[1].educatives
-	assert(educatives[0].hug != educatives[1].hug)
-	assert(educatives[2].hug != educatives[3].hug)
-	assert(len(hugs[0].educatives) == len(hugs[1].educatives))
+    educatives, hugs = create_small_educatives_and_hugs()
+    hard_constraints = []
+    soft_constraints = create_soft_constraints()
+    Sorter(soft_constraints, hard_constraints).assign_educatives_with_constant_score(educatives, hugs)
+    print "Sanity check:"
+    print hugs[0].educatives
+    print hugs[1].educatives
+    assert(educatives[0].hug != educatives[1].hug)
+    assert(educatives[2].hug != educatives[3].hug)
+    assert(len(hugs[0].educatives) == len(hugs[1].educatives))
+
+def stress_test():
+    import time
+    educatives, hugs = create_large_educatives_and_hugs()
+    hard_constraints = []
+    soft_constraints = create_soft_constraints()
+    print "Started stress test at " + time.ctime()
+    Sorter(soft_constraints, hard_constraints).assign_educatives_with_constant_score(educatives, hugs)
+    print "Ended stress test at " + time.ctime()

@@ -5,8 +5,9 @@ class GenderRandomSoftConstraint(RandomSoftConstraint):
         total_score = 0
         for hug in hugs:
             educatives_count = hug.get_educative_count()
-            gender_score = (hug.get_male_count() ** 2) * self.score
-            gender_score += ((educatives_count - hug.get_male_count()) ** 2) * self.score
+            male_count = hug.get_male_count()
+            gender_score = (male_count ** 2) * self.score
+            gender_score += ((educatives_count - male_count) ** 2) * self.score
             total_score += gender_score
         return total_score
 

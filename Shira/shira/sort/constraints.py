@@ -1,6 +1,6 @@
 import random
 
-class HardConstraint(Object):
+class HardConstraint(object):
     """
     A hard constraint is a boolean constraint - either it is valid, or not.
     An abstract class. Each hard constraint should inherit from it.
@@ -12,7 +12,7 @@ class HardConstraint(Object):
         """
         raise NotImplementedError
 
-class SoftConstraint(Object):
+class SoftConstraint(object):
     """
     A soft constraint is a constraint which returns a value - the higher the value, the worse it is.
     An abstract class. Each soft constraint should inherit from it.
