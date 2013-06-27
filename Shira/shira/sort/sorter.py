@@ -22,11 +22,11 @@ class Sorter():
         for educative in educatives:
             best_hug = self.find_best_hug(educative, educatives, hugs)
             educative.hug = best_hug
-            
+        
     def find_best_hug(self, current_educative, educatives, hugs):
         min_score = 2 ** 100
         best_hug = None
-        previous_hug = current_educative.hug
+        
         for hug in hugs:
             current_educative.hug = hug
             is_valid = self.check_is_valid(educatives, hugs)
