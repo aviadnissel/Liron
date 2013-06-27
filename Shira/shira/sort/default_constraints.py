@@ -1,5 +1,12 @@
-from shira.sort.constraints import RandomSoftConstraint
+from shira.sort.constraints import RandomSoftConstraint, HardConstraint
 
+class VegetarianHardConstraint(HardConstraint):
+    def is_valid(educatives, hugs):
+        for educative in educatives:
+            if educative.food != educative.hug.food:
+                return False
+        return True
+        
 class GenderRandomSoftConstraint(RandomSoftConstraint):
     def calculate_score(self, educatives, hugs):
         total_score = 0

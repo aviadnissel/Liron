@@ -1,13 +1,16 @@
 ﻿# -*- coding: utf-8 -*- 
 
-from elixir import Entity, Field, Unicode, OneToMany, using_options
+from elixir import Entity, Field, Unicode, OneToMany, using_options, Enum
+from shira.pojos.constants import *
 
 class Hug(Entity):
     """
     A hug in the seminar.
     """
+
     name = Field(Unicode(60))
     educatives = OneToMany('Educative')
+    food = Field(Enum(MEAT, VEGETARIAN))
     
     def __init__(self):
         self.kens_count = {}
@@ -16,14 +19,13 @@ class Hug(Entity):
         self.educatives_count = 0
     
     def update_count(self, educative, is_removed = False):
-        from shira.pojos.persons import Person
         ken = educative.ken
         second_ken = educative.second_ken
         gender = educative.gender
         
         if is_removed:
             self.educatives_count -= 1
-            if gender == Person.MALE:
+            if gender == MALE:
                 self.male_count -= 1
             self.kens_count[ken] = self.kens_count[ken] - 1
             if self.kens_count[ken] == 0:
@@ -33,7 +35,7 @@ class Hug(Entity):
                 del self.second_kens_count[second_ken]
         else:
             self.educatives_count += 1
-            if gender == Person.MALE:
+            if gender == MALE:
                 self.male_count += 1
             if ken in self.kens_count:
                 self.kens_count[ken] = self.kens_count[ken] + 1

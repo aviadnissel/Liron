@@ -2,17 +2,18 @@
 
 from elixir import Entity, Field, Unicode, Enum, ManyToOne, using_options
 from shira.pojos.seminar import Ken, SecondKen
+from shira.pojos.constants import *
 
 class Person(Entity):
     """
     An abstract person.
     """
-    MALE = u'זכר'
-    FEMALE = u'נקבה'
+
     using_options(inheritance='multi')
     first_name = Field(Unicode(60))
     last_name = Field(Unicode(60))
     gender = Field(Enum(MALE, FEMALE))
+    food = Field(Enum(MEAT, VEGETARIAN))
     
     def __repr__(self):
         return "%s %s" % (self.first_name, self.last_name)

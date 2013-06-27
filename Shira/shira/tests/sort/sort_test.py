@@ -1,5 +1,6 @@
 from shira.pojos.model import *
 from shira.sort.sorter import *
+from shira.pojos.constants import *
 
 def create_small_educatives_and_hugs():
     misgav = Ken()
@@ -9,22 +10,22 @@ def create_small_educatives_and_hugs():
     karmiel.name = 'Karmiel'
     
     aviad = Educative()
-    aviad.gender = Person.MALE
+    aviad.gender = MALE
     aviad.first_name = "Aviad"
     aviad.ken = misgav
 	
     naama = Educative()
-    naama.gender = Person.FEMALE
+    naama.gender = FEMALE
     naama.first_name = "Naama"
     naama.ken = karmiel
 	
     inbar = Educative()
-    inbar.gender = Person.FEMALE
+    inbar.gender = FEMALE
     inbar.first_name = "Inbar"
     inbar.ken = misgav
 	
     alon = Educative()
-    alon.gender = Person.MALE
+    alon.gender = MALE
     alon.first_name = "Alon"
     alon.ken = karmiel
 	
@@ -37,7 +38,6 @@ def create_small_educatives_and_hugs():
 
 def create_large_educatives_and_hugs():
     import random
-    from shira.pojos.persons import Person
     NUMBER_OF_KENS = 50
     NUMBER_OF_EDUCATIVES = 900
     NUMBER_OF_HUGS = 45
@@ -51,9 +51,9 @@ def create_large_educatives_and_hugs():
     for i in xrange(NUMBER_OF_EDUCATIVES):
         educative = Educative()
         if random.randint(0, 1) == 0:
-            educative.gender = Person.MALE
+            educative.gender = MALE
         else:
-            educative.gender = Person.FEMALE
+            educative.gender = FEMALE
         educative.first_name = "educative"
         educative.last_name = str(i)
         educative.ken = kens[random.randint(0, NUMBER_OF_KENS - 1)]
