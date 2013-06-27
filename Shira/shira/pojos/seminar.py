@@ -13,6 +13,7 @@ class Hug(Entity):
         self.kens_count = {}
         self.second_kens_count = {}
         self.male_count = 0
+        self.educatives_count = 0
     
     def update_count(self, educative, is_removed = False):
         from shira.pojos.persons import Person
@@ -21,6 +22,7 @@ class Hug(Entity):
         gender = educative.gender
         
         if is_removed:
+            self.educatives_count -= 1
             if gender == Person.MALE:
                 self.male_count -= 1
             self.kens_count[ken] = self.kens_count[ken] - 1
@@ -30,6 +32,7 @@ class Hug(Entity):
             if self.second_kens_count[second_ken] == 0:
                 del self.second_kens_count[second_ken]
         else:
+            self.educatives_count += 1
             if gender == Person.MALE:
                 self.male_count += 1
             if ken in self.kens_count:
@@ -52,7 +55,7 @@ class Hug(Entity):
         """
         Returns the number of educatives in the hug
         """
-        return len(self.educatives)
+        return self.educatives_count
     
     def get_kens_count(self):
         """

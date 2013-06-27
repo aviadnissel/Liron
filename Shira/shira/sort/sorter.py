@@ -2,7 +2,6 @@
 
 import random
 import time
-import math
 from shira.pojos.persons import Educative
 from shira.pojos.persons import Person
 from shira.pojos.seminar import Hug, Ken
@@ -35,7 +34,7 @@ class Sorter():
                 if score < min_score:
                     min_score = score
                     best_hug = hug
-            current_educative.hug = previous_hug
+        current_educative.hug = previous_hug
         return best_hug
     
     def check_is_valid(self, educatives, hugs):
