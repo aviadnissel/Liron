@@ -24,7 +24,20 @@ class Educative(Person):
     using_options(inheritance='multi')
     ken = ManyToOne('Ken')
     second_ken = ManyToOne('SecondKen')
-    hug = ManyToOne('Hug')
+    _hug = ManyToOne('Hug')
+    
+    def _set_hug(self, hug):
+        if self._hug != None:
+            self._hug.update_count(self, is_removed = True)
+        if hug != None:
+            hug.update_count(self)
+        self._hug = hug
+    
+    def _get_hug(self):
+        return self._hug
+    
+    hug = property(_get_hug, _set_hug)
+        
 
 class Madrich(Person):
     """

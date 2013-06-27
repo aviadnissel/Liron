@@ -8,17 +8,45 @@ class Hug(Entity):
     """
     name = Field(Unicode(60))
     educatives = OneToMany('Educative')
+    
+    def __init__(self):
+        self.kens_count = {}
+        self.second_kens_count = {}
+        self.male_count = 0
+    
+    def update_count(self, educative, is_removed = False):
+        from shira.pojos.persons import Person
+        ken = educative.ken
+        second_ken = educative.second_ken
+        gender = educative.gender
+        
+        if is_removed:
+            if gender == Person.MALE:
+                self.male_count -= 1
+            self.kens_count[ken] = self.kens_count[ken] - 1
+            if self.kens_count[ken] == 0:
+                del self.kens_count[ken]
+            self.second_kens_count[second_ken] = self.second_kens_count[second_ken] - 1
+            if self.second_kens_count[second_ken] == 0:
+                del self.second_kens_count[second_ken]
+        else:
+            if gender == Person.MALE:
+                self.male_count += 1
+            if ken in self.kens_count:
+                self.kens_count[ken] = self.kens_count[ken] + 1
+            else:
+                self.kens_count[ken] = 1
+            if second_ken in self.second_kens_count:
+                self.second_kens_count[second_ken] = self.second_kens_count[second_ken] + 1
+            else:
+                self.second_kens_count[second_ken] = 1
+            
         
     def get_male_count(self):
         """
         Counts and returns the number of male educatives in the hug.
         """
-        from shira.pojos.persons import Person
-        male_count = 0
-        for educative in self.educatives:
-            if educative.gender == Person.MALE:
-                male_count += 1
-        return male_count
+        return self.male_count
         
     def get_educative_count(self):
         """
@@ -31,28 +59,14 @@ class Hug(Entity):
         Counts the number of educatives in each ken, in the hug.
         Returns a dictionary between the ken and the number of educatives.
         """
-        kens_count = {}
-        for educative in self.educatives:
-            ken = educative.ken
-            if kens_count.has_key(ken):
-                kens_count[ken] = kens_count[ken] + 1
-            else:
-                kens_count[ken] = 1
-        return kens_count
+        return self.kens_count
         
     def get_second_kens_count(self):
         """
         Counts the number of educatives in each second ken, in the hug.
         Returns a dictionary between the second ken and the number of educatives.
         """
-        kens_count = {}
-        for educative in self.educatives:
-            ken = educative.second_ken
-            if kens_count.has_key(ken):
-                kens_count[ken] = kens_count[ken] + 1
-            else:
-                kens_count[ken] = 1
-        return kens_count
+        return self.second_kens_count
         
 
 class AbstractKen(Entity):

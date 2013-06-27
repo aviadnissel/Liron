@@ -38,15 +38,17 @@ def create_small_educatives_and_hugs():
 def create_large_educatives_and_hugs():
     import random
     from shira.pojos.persons import Person
-    
+    NUMBER_OF_KENS = 50
+    NUMBER_OF_EDUCATIVES = 900
+    NUMBER_OF_HUGS = 45
     kens = []
-    for i in xrange(20):
+    for i in xrange(NUMBER_OF_KENS):
         ken = Ken()
         ken.name = "Ken " + str(i)
         kens.append(ken)
         
     educatives = []
-    for i in xrange(800):
+    for i in xrange(NUMBER_OF_EDUCATIVES):
         educative = Educative()
         if random.randint(0, 1) == 0:
             educative.gender = Person.MALE
@@ -54,11 +56,11 @@ def create_large_educatives_and_hugs():
             educative.gender = Person.FEMALE
         educative.first_name = "educative"
         educative.last_name = str(i)
-        educative.ken = kens[random.randint(0, 19)]
+        educative.ken = kens[random.randint(0, NUMBER_OF_KENS - 1)]
         educatives.append(educative)
     
     hugs = []
-    for i in xrange(40):
+    for i in xrange(NUMBER_OF_HUGS):
         hug = Hug()
         hug.name = "Hug " + str(i)
         hugs.append(hug)
