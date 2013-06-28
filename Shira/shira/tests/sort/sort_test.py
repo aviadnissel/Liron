@@ -1,6 +1,7 @@
 from shira.pojos.model import *
 from shira.sort.sorter import *
 from shira.pojos.constants import *
+from shira.sort.default_constraints import *
 
 def create_small_educatives_and_hugs():
     misgav = Ken()
@@ -41,6 +42,8 @@ def create_large_educatives_and_hugs():
     NUMBER_OF_KENS = 50
     NUMBER_OF_EDUCATIVES = 900
     NUMBER_OF_HUGS = 45
+    NUMBER_OF_VEGETARIAN_HUGS = 8
+    
     kens = []
     for i in xrange(NUMBER_OF_KENS):
         ken = Ken()
@@ -50,10 +53,14 @@ def create_large_educatives_and_hugs():
     educatives = []
     for i in xrange(NUMBER_OF_EDUCATIVES):
         educative = Educative()
-        if random.randint(0, 1) == 0:
+        if random.randint(0, 2) == 0:
             educative.gender = MALE
         else:
             educative.gender = FEMALE
+        if random.randint(0, 9) == 0:
+            educative.food = VEGETARIAN
+        else:
+            educative.food = MEAT
         educative.first_name = "educative"
         educative.last_name = str(i)
         educative.ken = kens[random.randint(0, NUMBER_OF_KENS - 1)]
@@ -63,20 +70,25 @@ def create_large_educatives_and_hugs():
     for i in xrange(NUMBER_OF_HUGS):
         hug = Hug()
         hug.name = "Hug " + str(i)
+        if i < NUMBER_OF_VEGETARIAN_HUGS:
+            hug.food = VEGETARIAN
         hugs.append(hug)
     
     return educatives, hugs
     
 def create_soft_constraints():
-    from shira.sort.default_constraints import *
     gender = GenderRandomSoftConstraint(10, 10, 10)
     size = SizeRandomSoftConstraint(100, 100, 100)
     ken = KenRandomSoftConstraint(1, 1, 1)
     return [gender, size, ken]
+
+def create_hard_constraints():
+    vegetarian = VegetarianHardConstraint()
+    return [vegetarian]
     
 def sanity_check():
     educatives, hugs = create_small_educatives_and_hugs()
-    hard_constraints = []
+    hard_constraints = create_hard_constraints()
     soft_constraints = create_soft_constraints()
     Sorter(soft_constraints, hard_constraints).assign_educatives_with_constant_score(educatives, hugs)
     print "Sanity check:"
@@ -89,8 +101,10 @@ def sanity_check():
 def stress_test():
     import time
     educatives, hugs = create_large_educatives_and_hugs()
-    hard_constraints = []
+    hard_constraints = create_hard_constraints()
     soft_constraints = create_soft_constraints()
     print "Started stress test at " + time.ctime()
     Sorter(soft_constraints, hard_constraints).assign_educatives_with_constant_score(educatives, hugs)
     print "Ended stress test at " + time.ctime()
+    for hug in hugs:
+        print len(hug.educatives),

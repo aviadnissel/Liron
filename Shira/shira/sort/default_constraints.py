@@ -1,9 +1,10 @@
 from shira.sort.constraints import RandomSoftConstraint, HardConstraint
+from shira.pojos.constants import *
 
 class VegetarianHardConstraint(HardConstraint):
-    def is_valid(educatives, hugs):
-        for educative in educatives:
-            if educative.food != educative.hug.food:
+    def is_valid(self, last_educative, educatives, hugs):
+        if last_educative.hug != None :
+            if last_educative.food == VEGETARIAN and last_educative.hug.food != VEGETARIAN:
                 return False
         return True
         
@@ -33,11 +34,9 @@ class KenRandomSoftConstraint(RandomSoftConstraint):
         total_score = 0
         score = self.score
         for hug in hugs:
-            ken_score = 0
             for ken, count in hug.get_kens_count().iteritems():
-                ken_score += (count ** 2) * score
+                total_score += (count ** 2) * score
             for second_ken, count in hug.get_second_kens_count().iteritems():
                 if second_ken != None:
-                    ken_score += (count ** 2) * score
-            total_score += ken_score
+                    total_score += (count ** 2) * score
         return total_score

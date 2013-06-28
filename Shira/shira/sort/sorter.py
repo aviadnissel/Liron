@@ -28,7 +28,7 @@ class Sorter():
         previous_hug = current_educative.hug
         for hug in hugs:
             current_educative.hug = hug
-            is_valid = self.check_is_valid(educatives, hugs)
+            is_valid = self.check_is_valid(current_educative, educatives, hugs)
             if is_valid:
                 score = self.calculate_score(educatives, hugs)
                 if score < min_score:
@@ -37,9 +37,9 @@ class Sorter():
         current_educative.hug = previous_hug
         return best_hug
     
-    def check_is_valid(self, educatives, hugs):
+    def check_is_valid(self, current_educative, educatives, hugs):
         for constraint in self.hard_constraints:
-            if not constraint.is_valid(educatives, hugs):
+            if not constraint.is_valid(current_educative, educatives, hugs):
                 return False
         return True
     

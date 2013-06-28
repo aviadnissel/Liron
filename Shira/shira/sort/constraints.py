@@ -5,7 +5,7 @@ class HardConstraint(object):
     A hard constraint is a boolean constraint - either it is valid, or not.
     An abstract class. Each hard constraint should inherit from it.
     """
-    def is_valid(self, educatives, hugs):
+    def is_valid(self, last_educative, educatives, hugs):
         """
         Decides, based on the given educatives and hugs, if they are valid.
         Should be implemented by the inheriting class.
