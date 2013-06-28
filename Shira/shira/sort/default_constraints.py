@@ -7,6 +7,17 @@ class VegetarianHardConstraint(HardConstraint):
             if last_educative.food == VEGETARIAN and last_educative.hug.food != VEGETARIAN:
                 return False
         return True
+
+class MadrichHardConstraint(HardConstraint):
+    def is_valid(self, last_educative, educatives, hugs):
+        hug = last_educative.hug
+        educative_ken = last_educative.ken
+        if hug != None:
+            for madrich in hug.madrichim:
+                if madrich.ken == educative_ken:
+                    return False
+        return True
+            
         
 class GenderRandomSoftConstraint(RandomSoftConstraint):
     def calculate_score(self, educatives, hugs):

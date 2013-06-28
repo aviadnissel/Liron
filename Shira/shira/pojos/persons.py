@@ -47,4 +47,5 @@ class Madrich(Person):
     using_options(inheritance='multi')
     ken = ManyToOne('Ken')
     second_ken = ManyToOne('SecondKen')
+    hug = ManyToOne('Hug')
 

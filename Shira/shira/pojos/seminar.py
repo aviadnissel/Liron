@@ -10,6 +10,7 @@ class Hug(Entity):
 
     name = Field(Unicode(60))
     educatives = OneToMany('Educative')
+    madrichim = OneToMany('Madrich')
     food = Field(Enum(MEAT, VEGETARIAN))
     
     def __init__(self):

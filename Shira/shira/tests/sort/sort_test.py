@@ -73,6 +73,11 @@ def create_large_educatives_and_hugs():
         if i < NUMBER_OF_VEGETARIAN_HUGS:
             hug.food = VEGETARIAN
         hugs.append(hug)
+        for j in xrange(random.randint(1, 2)):
+            madrich = Madrich()
+            madrich.name = "Madrich " + str(j)
+            madrich.ken = kens[random.randint(0, NUMBER_OF_KENS - 1)]
+            hug.madrichim.append(madrich)
     
     return educatives, hugs
     
@@ -84,6 +89,7 @@ def create_soft_constraints():
 
 def create_hard_constraints():
     vegetarian = VegetarianHardConstraint()
+    madrich = MadrichHardConstraint()
     return [vegetarian]
     
 def sanity_check():

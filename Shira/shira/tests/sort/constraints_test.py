@@ -12,4 +12,27 @@ def vegetarian_test():
     aviad.hug = hug
     
     constraint = VegetarianHardConstraint()
-    print constraint.is_valid([aviad], [hug])
+    assert(not constraint.is_valid(aviad, [aviad], [hug]))
+
+def madrich_test():
+    ken = Ken()
+    ken.name = 'Misgav'
+    
+    hug = Hug()
+    hug.name = 'Nice Hug'
+    
+    aviad = Educative()
+    aviad.first_name = 'Aviad'
+    aviad.ken = ken
+    aviad.hug = hug
+    
+    madrich = Madrich()
+    madrich.first_name = 'Cool'
+    madrich.last_name = 'Guy'
+    madrich.ken = ken
+    madrich.hug = hug
+    
+    constraint = MadrichHardConstraint()
+    assert(not constraint.is_valid(aviad, [aviad], [hug]))
+    
+    
