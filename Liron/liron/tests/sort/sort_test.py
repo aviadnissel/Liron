@@ -113,5 +113,4 @@ def stress_test():
     print "Started stress test at " + time.ctime()
     Sorter(soft_constraints, hard_constraints).assign_educatives_with_constant_score(educatives, hugs)
     print "Ended stress test at " + time.ctime()
-    for hug in hugs:
-        print len(hug.educatives),
+    return educatives, hugs
