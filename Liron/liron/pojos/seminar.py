@@ -1,7 +1,7 @@
 ﻿# -*- coding: utf-8 -*- 
 
 from elixir import Entity, Field, Unicode, OneToMany, using_options, Enum
-from shira.pojos.constants import *
+from liron.pojos.constants import *
 
 class Hug(Entity):
     """

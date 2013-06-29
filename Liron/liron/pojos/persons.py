@@ -1,8 +1,8 @@
 ﻿# -*- coding: utf-8 -*- 
 
 from elixir import Entity, Field, Unicode, Enum, ManyToOne, using_options
-from shira.pojos.seminar import Ken, SecondKen
-from shira.pojos.constants import *
+from liron.pojos.seminar import Ken, SecondKen
+from liron.pojos.constants import *
 
 class Person(Entity):
     """

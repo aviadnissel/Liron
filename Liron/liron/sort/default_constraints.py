@@ -1,5 +1,5 @@
-from shira.sort.constraints import RandomSoftConstraint, HardConstraint
-from shira.pojos.constants import *
+from liron.sort.constraints import RandomSoftConstraint, HardConstraint
+from liron.pojos.constants import *
 
 class VegetarianHardConstraint(HardConstraint):
     def is_valid(self, last_educative, educatives, hugs):

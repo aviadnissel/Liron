@@ -1,7 +1,7 @@
-from shira.pojos.model import *
-from shira.sort.sorter import *
-from shira.pojos.constants import *
-from shira.sort.default_constraints import *
+from liron.pojos.model import *
+from liron.sort.sorter import *
+from liron.pojos.constants import *
+from liron.sort.default_constraints import *
 
 def create_small_educatives_and_hugs():
     misgav = Ken()

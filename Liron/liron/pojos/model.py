@@ -1,9 +1,9 @@
 from elixir import setup_all, session, metadata
 
-metadata.bind = "sqlite:///shira.sqlite"
+metadata.bind = "sqlite:///liron.sqlite"
 metadata.bind.echo = True
 
-from shira.pojos.persons import *
-from shira.pojos.seminar import *
+from liron.pojos.persons import *
+from liron.pojos.seminar import *
 
 setup_all()

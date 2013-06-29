@@ -4,7 +4,7 @@
 
 from elixir import create_all
 
-from shira.pojos.model import *
+from liron.pojos.model import *
 
 if __name__ == '__main__':
     create_all()

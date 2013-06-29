@@ -2,9 +2,9 @@
 
 import random
 import time
-from shira.pojos.persons import Educative
-from shira.pojos.persons import Person
-from shira.pojos.seminar import Hug, Ken
+from liron.pojos.persons import Educative
+from liron.pojos.persons import Person
+from liron.pojos.seminar import Hug, Ken
 
 MAX_TIME = 1 #* 60 # One minute
 MAX_GENDER_SCORE = 5000
