@@ -61,7 +61,7 @@ def create_large_educatives_and_hugs():
             educative.food = VEGETARIAN
         else:
             educative.food = MEAT
-        educative.first_name = "educative"
+        educative.first_name = "Educative"
         educative.last_name = str(i)
         educative.ken = kens[random.randint(0, NUMBER_OF_KENS - 1)]
         educatives.append(educative)
@@ -75,7 +75,8 @@ def create_large_educatives_and_hugs():
         hugs.append(hug)
         for j in xrange(random.randint(1, 2)):
             madrich = Madrich()
-            madrich.name = "Madrich " + str(j)
+            madrich.first_name = "Madrich"
+            madrich.last_name = str(j)
             madrich.ken = kens[random.randint(0, NUMBER_OF_KENS - 1)]
             hug.madrichim.append(madrich)
     
@@ -90,7 +91,7 @@ def create_soft_constraints():
 def create_hard_constraints():
     vegetarian = VegetarianHardConstraint()
     madrich = MadrichHardConstraint()
-    return [vegetarian]
+    return [vegetarian, madrich]
     
 def sanity_check():
     educatives, hugs = create_small_educatives_and_hugs()

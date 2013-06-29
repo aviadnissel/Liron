@@ -19,6 +19,9 @@ class Hug(Entity):
         self.male_count = 0
         self.educatives_count = 0
     
+    def __repr__(self):
+        return self.name
+        
     def update_count(self, educative, is_removed = False):
         ken = educative.ken
         second_ken = educative.second_ken
