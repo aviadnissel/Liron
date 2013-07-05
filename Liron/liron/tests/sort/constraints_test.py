@@ -97,7 +97,7 @@ def ken_constant_test():
     
     ken1 = Ken()
     ken2 = Ken()
-    second_ken = Ken()
+    second_ken = SecondKen()
     
     educative1 = Educative()
     educative1.ken = ken1
@@ -116,5 +116,5 @@ def ken_constant_test():
     educative4.second_ken = second_ken
     educative4.hug = hugs[1]
     
-    score = constraint.calculate_score([educative1, educative2, educative3, educative_4], seminar)
-    assert(score == 60)
+    score = constraint.calculate_score([educative1, educative2, educative3, educative4], seminar)
+    assert(score == 70)
