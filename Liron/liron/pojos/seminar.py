@@ -1,8 +1,17 @@
 ﻿# -*- coding: utf-8 -*- 
 
-from elixir import Entity, Field, Unicode, OneToMany, using_options, Enum
+from elixir import Entity, Field, Unicode, OneToMany, ManyToOne, using_options, Enum
 from liron.pojos.constants import *
 
+class Seminar(Entity):
+    name = Field(Unicode(60))
+    camps = OneToMany('Camp')
+
+class Camp(Entity):
+    name = Field(Unicode(60))
+    hugs = OneToMany('Hug')
+    seminar = ManyToOne('Seminar')
+    
 class Hug(Entity):
     """
     A hug in the seminar.
@@ -11,6 +20,7 @@ class Hug(Entity):
     name = Field(Unicode(60))
     educatives = OneToMany('Educative')
     madrichim = OneToMany('Madrich')
+    camp = ManyToOne('Camp')
     food = Field(Enum(MEAT, VEGETARIAN))
     
     def __init__(self):

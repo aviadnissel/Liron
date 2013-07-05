@@ -1,4 +1,4 @@
-from elixir import setup_all, session, metadata
+from elixir import setup_all, cleanup_all, session, metadata
 
 metadata.bind = "sqlite:///liron.sqlite"
 metadata.bind.echo = True
