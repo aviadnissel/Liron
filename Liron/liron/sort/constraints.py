@@ -5,9 +5,9 @@ class HardConstraint(object):
     A hard constraint is a boolean constraint - either it is valid, or not.
     An abstract class. Each hard constraint should inherit from it.
     """
-    def is_valid(self, last_educative, educatives, hugs):
+    def is_valid(self, last_educative, educatives, seminar):
         """
-        Decides, based on the given educatives and hugs, if they are valid.
+        Decides, based on the given educatives and seminar, if they are valid.
         Should be implemented by the inheriting class.
         """
         raise NotImplementedError
@@ -20,7 +20,7 @@ class SoftConstraint(object):
     def __init__(self, score):  
         self.score = score
     
-    def calculate_score(self, educatives, hugs):
+    def calculate_score(self, educatives, seminar):
         raise NotImplementedError
 
 class RandomSoftConstraint(SoftConstraint):
@@ -36,6 +36,6 @@ class RandomSoftConstraint(SoftConstraint):
     def reset_score(self):
         self.score = self.constant_score
         
-    def calculate_random_score(self, educatives, hugs):
+    def calculate_random_score(self, educatives, seminar):
         self.score = random.randint(self.min_score, self.max_score)
-        return self.calculate_score(self.score, educatives, hugs)
+        return self.calculate_score(self.score, educatives, seminar)

@@ -43,7 +43,7 @@ class Sorter():
         for camp in seminar.camps:
             hugs += camp.hugs
         for constraint in self.hard_constraints:
-            if not constraint.is_valid(current_educative, educatives, hugs):
+            if not constraint.is_valid(current_educative, educatives, seminar):
                 return False
         return True
     
@@ -53,5 +53,5 @@ class Sorter():
             hugs += camp.hugs
         score = 0
         for constraint in self.soft_constraints:
-            score += constraint.calculate_score(educatives, hugs)
+            score += constraint.calculate_score(educatives, seminar)
         return score
