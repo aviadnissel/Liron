@@ -39,18 +39,12 @@ class Sorter():
         return best_hug
     
     def check_is_valid(self, current_educative, educatives, seminar):
-        hugs = []
-        for camp in seminar.camps:
-            hugs += camp.hugs
         for constraint in self.hard_constraints:
             if not constraint.is_valid(current_educative, educatives, seminar):
                 return False
         return True
     
     def calculate_score(self, educatives, seminar):
-        hugs = []
-        for camp in seminar.camps:
-            hugs += camp.hugs
         score = 0
         for constraint in self.soft_constraints:
             score += constraint.calculate_score(educatives, seminar)
