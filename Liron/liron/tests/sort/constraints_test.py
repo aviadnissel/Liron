@@ -1,7 +1,10 @@
-from liron.pojos.model import *
-from liron.pojos.constants import *
-from liron.sort.default_constraints import *
 
+from liron.pojos.constants import VEGETARIAN, MEAT, MALE, FEMALE
+from liron.pojos.persons import Educative, Madrich
+from liron.pojos.seminar import Seminar, Camp, Hug, Ken, SecondKen
+from liron.sort.default_constraints import VegetarianHardConstraint, \
+    MadrichHardConstraint, GenderRandomSoftConstraint, SizeRandomSoftConstraint, \
+    KenRandomSoftConstraint
 import unittest
 
 def create_seminar(num_of_camps, num_of_hugs):

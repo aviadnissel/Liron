@@ -1,7 +1,18 @@
-from liron.pojos.model import *
-from liron.sort.sorter import *
-from liron.pojos.constants import *
-from liron.sort.default_constraints import *
+
+
+from liron.pojos.constants import MALE, FEMALE, VEGETARIAN, MEAT
+from liron.pojos.persons import Educative, Madrich
+from liron.pojos.seminar import Ken, Seminar, Camp, Hug
+from liron.sort.default_constraints import GenderRandomSoftConstraint, \
+    SizeRandomSoftConstraint, KenRandomSoftConstraint, VegetarianHardConstraint, \
+    MadrichHardConstraint
+import liron.pojos.model  # @UnusedImport
+from liron.sort.sorter import Sorter
+import random
+import time
+import unittest
+
+
 
 def create_small_educatives_and_seminar():
     misgav = Ken()
@@ -14,22 +25,22 @@ def create_small_educatives_and_seminar():
     aviad.gender = MALE
     aviad.first_name = "Aviad"
     aviad.ken = misgav
-	
+    
     naama = Educative()
     naama.gender = FEMALE
     naama.first_name = "Naama"
     naama.ken = karmiel
-	
+    
     inbar = Educative()
     inbar.gender = FEMALE
     inbar.first_name = "Inbar"
     inbar.ken = misgav
-	
+    
     alon = Educative()
     alon.gender = MALE
     alon.first_name = "Alon"
     alon.ken = karmiel
-	
+    
     seminar = Seminar()
     camp = Camp()
     camp.seminar = seminar
@@ -40,11 +51,10 @@ def create_small_educatives_and_seminar():
     hug2 = Hug()
     hug2.name = "Hug2"
     hug2.camp = camp
-	
+    
     return [aviad, naama, inbar, alon], seminar
     
 def create_large_educatives_and_seminar():
-    import random
     NUMBER_OF_KENS = 50
     NUMBER_OF_EDUCATIVES = 900
     NUMBER_OF_HUGS = 45
@@ -109,24 +119,25 @@ def create_hard_constraints():
     madrich = MadrichHardConstraint()
     return [vegetarian, madrich]
     
-def sanity_check():
-    educatives, seminar = create_small_educatives_and_seminar()
-    hard_constraints = create_hard_constraints()
-    soft_constraints = create_soft_constraints()
-    Sorter(soft_constraints, hard_constraints).assign_educatives_with_constant_score(educatives, seminar)
-    print "Sanity check:"
-    print seminar.camps[0].hugs[0].educatives
-    print seminar.camps[0].hugs[1].educatives
-    assert(educatives[0].hug != educatives[1].hug)
-    assert(educatives[2].hug != educatives[3].hug)
-    assert(len(seminar.camps[0].hugs[0].educatives) == len(seminar.camps[0].hugs[1].educatives))
-
-def stress_test():
-    import time
-    educatives, seminar = create_large_educatives_and_seminar()
-    hard_constraints = create_hard_constraints()
-    soft_constraints = create_soft_constraints()
-    print "Started stress test at " + time.ctime()
-    Sorter(soft_constraints, hard_constraints).assign_educatives_with_constant_score(educatives, seminar)
-    print "Ended stress test at " + time.ctime()
-    return educatives, seminar
+class SortTest(unittest.TestCase):
+    
+    def test_sanity(self):
+        educatives, seminar = create_small_educatives_and_seminar()
+        hard_constraints = create_hard_constraints()
+        soft_constraints = create_soft_constraints()
+        Sorter(soft_constraints, hard_constraints).assign_educatives_with_constant_score(educatives, seminar)
+        print "Sanity check:"
+        print seminar.camps[0].hugs[0].educatives
+        print seminar.camps[0].hugs[1].educatives
+        assert(educatives[0].hug != educatives[1].hug)
+        assert(educatives[2].hug != educatives[3].hug)
+        assert(len(seminar.camps[0].hugs[0].educatives) == len(seminar.camps[0].hugs[1].educatives))
+    
+    def test_stress(self):
+        educatives, seminar = create_large_educatives_and_seminar()
+        hard_constraints = create_hard_constraints()
+        soft_constraints = create_soft_constraints()
+        print "Started stress test at " + time.ctime()
+        Sorter(soft_constraints, hard_constraints).assign_educatives_with_constant_score(educatives, seminar)
+        print "Ended stress test at " + time.ctime()
+        return educatives, seminar
