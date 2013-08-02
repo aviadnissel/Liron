@@ -1,4 +1,4 @@
-
+import liron.pojos.model # @UnusedImport
 from liron.pojos.constants import VEGETARIAN, MEAT, MALE, FEMALE
 from liron.pojos.persons import Educative, Madrich
 from liron.pojos.seminar import Seminar, Camp, Hug, Ken, SecondKen
