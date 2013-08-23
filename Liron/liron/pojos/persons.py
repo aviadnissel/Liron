@@ -23,9 +23,9 @@ class Educative(Person):
     An educative in the seminar.
     """
     using_options(inheritance='multi')
-    ken = ManyToOne('Ken')
-    second_ken = ManyToOne('SecondKen')
-    _hug = ManyToOne('Hug')
+    ken = ManyToOne('Ken', lazy=False)
+    second_ken = ManyToOne('SecondKen', lazy=False)
+    _hug = ManyToOne('Hug', lazy=False)
     
     def _set_hug(self, hug):
         if self._hug != None:

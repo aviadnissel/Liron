@@ -5,12 +5,12 @@ from liron.pojos.constants import *
 
 class Seminar(Entity):
     name = Field(Unicode(60))
-    camps = OneToMany('Camp')
+    camps = OneToMany('Camp', lazy=False)
 
 class Camp(Entity):
     name = Field(Unicode(60))
-    hugs = OneToMany('Hug')
-    seminar = ManyToOne('Seminar')
+    hugs = OneToMany('Hug', lazy=False)
+    seminar = ManyToOne('Seminar', lazy=False)
     
 class Hug(Entity):
     """
@@ -18,9 +18,9 @@ class Hug(Entity):
     """
 
     name = Field(Unicode(60))
-    educatives = OneToMany('Educative')
-    madrichim = OneToMany('Madrich')
-    camp = ManyToOne('Camp')
+    educatives = OneToMany('Educative', lazy=False)
+    madrichim = OneToMany('Madrich', lazy=False)
+    camp = ManyToOne('Camp', lazy=False)
     food = Field(Enum(MEAT, VEGETARIAN))
     
     def __init__(self):
