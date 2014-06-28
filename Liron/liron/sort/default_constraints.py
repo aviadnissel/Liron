@@ -6,7 +6,7 @@ from sqlalchemy.sql.expression import func
 
 class VegetarianHardConstraint(HardConstraint):
     def is_valid(self, last_educative, educatives, seminar):
-        if last_educative.hug != None :
+        if last_educative.hug is not None :
             if last_educative.food == VEGETARIAN and last_educative.hug.food != VEGETARIAN:
                 return False
         return True
@@ -29,15 +29,6 @@ class GenderRandomSoftConstraint(RandomSoftConstraint):
         for hug_gender in gender_count:
             count = hug_gender[2]
             total_score += (count ** 2) * self.score
-        # for camp in seminar.camps:
-        #     for hug in camp.hugs:
-        #         educatives_count = session.query(Educative).filter(Educative.hug == hug).count()
-        #         male_count = session.query(Educative).filter(Educative.hug ==
-        #                     hug).filter(Educative.gender == MALE).count()
-        #         gender_score = (male_count ** 2) * self.score
-        #         female_count = educatives_count - male_count
-        #         gender_score += (female_count ** 2) * self.score
-        #         total_score += gender_score
         return total_score
 
 class SizeRandomSoftConstraint(RandomSoftConstraint):
@@ -46,10 +37,6 @@ class SizeRandomSoftConstraint(RandomSoftConstraint):
         size_count = session.query(Educative.hug_id, func.count(Educative.hug_id)).group_by(Educative.hug_id).all()
         for size in size_count:
             total_score += (size[1] ** 2) * self.score
-        # for camp in seminar.camps:
-        #     for hug in camp.hugs:
-        #         educatives_count = session.query(Educative).filter(Educative.hug == hug).count()
-        #         total_score += (educatives_count ** 2) * self.score
         return total_score
 
 
@@ -57,14 +44,12 @@ class KenRandomSoftConstraint(RandomSoftConstraint):
     def calculate_score(self, educatives, seminar):
         total_score = 0
         score = self.score
-        for camp in seminar.camps:
-            for hug in camp.hugs:
-                kens_count = session.query(Educative.ken_id, func.count(Educative.ken_id)).filter(Educative.hug_id == hug.id).group_by(Educative.ken_id).all()
-                for ken in kens_count:
-                    count = ken[1]
-                    total_score += (count ** 2) * score
-                second_kens_count = session.query(Educative.second_ken_id, func.count(Educative.second_ken_id)).filter(Educative.hug_id == hug.id).group_by(Educative.second_ken_id).all()
-                for second_ken in second_kens_count:
-                    if second_ken is not None:
-                        total_score += (second_ken[1] ** 2) * score
+        ken_count = session.query(Educative.hug_id, Educative.ken_id, func.count(Educative.ken_id)).group_by(Educative.hug_id, Educative.ken_id).all()
+        print ken_count
+        for ken in ken_count:
+            total_score += (ken[2] ** 2) * score
+        second_ken_count = session.query(Educative.hug_id, Educative.second_ken_id, func.count(Educative.second_ken_id)).group_by(Educative.hug_id, Educative.second_ken_id).all()
+        print second_ken_count
+        for second_ken in second_ken_count:
+            total_score += (second_ken[2] ** 2) * score
         return total_score
