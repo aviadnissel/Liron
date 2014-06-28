@@ -154,6 +154,7 @@ class SortTest():
         educatives, seminar = self.create_small_educatives_and_seminar()
         hard_constraints = create_hard_constraints()
         soft_constraints = create_soft_constraints()
+        self.session.flush()
         Sorter(soft_constraints, hard_constraints).assign_educatives_with_constant_score(educatives, seminar)
         print "Sanity check:"
         print seminar.camps[0].hugs[0].educatives
@@ -161,13 +162,13 @@ class SortTest():
         assert(educatives[0].hug != educatives[1].hug)
         assert(educatives[2].hug != educatives[3].hug)
         assert(len(seminar.camps[0].hugs[0].educatives) == len(seminar.camps[0].hugs[1].educatives))
-    
+
     def test_stress(self):
         educatives, seminar = self.create_large_educatives_and_seminar()
+        self.session.flush()
         hard_constraints = create_hard_constraints()
         soft_constraints = create_soft_constraints()
         print "Started stress test at " + time.ctime()
-        self.session.flush()
         Sorter(soft_constraints, hard_constraints).assign_educatives_with_constant_score(educatives, seminar)
         print "Ended stress test at " + time.ctime()
         return educatives, seminar

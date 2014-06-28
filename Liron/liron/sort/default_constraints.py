@@ -45,11 +45,9 @@ class KenRandomSoftConstraint(RandomSoftConstraint):
         total_score = 0
         score = self.score
         ken_count = session.query(Educative.hug_id, Educative.ken_id, func.count(Educative.ken_id)).group_by(Educative.hug_id, Educative.ken_id).all()
-        print ken_count
         for ken in ken_count:
             total_score += (ken[2] ** 2) * score
         second_ken_count = session.query(Educative.hug_id, Educative.second_ken_id, func.count(Educative.second_ken_id)).group_by(Educative.hug_id, Educative.second_ken_id).all()
-        print second_ken_count
         for second_ken in second_ken_count:
             total_score += (second_ken[2] ** 2) * score
         return total_score
