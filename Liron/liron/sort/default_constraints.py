@@ -1,5 +1,8 @@
 from liron.sort.constraints import RandomSoftConstraint, HardConstraint
-from liron.pojos.constants import *
+from liron.models.constants import *
+from liron.models import session
+from liron.models.persons import Educative
+from sqlalchemy.sql.expression import func
 
 class VegetarianHardConstraint(HardConstraint):
     def is_valid(self, last_educative, educatives, seminar):
@@ -17,15 +20,16 @@ class MadrichHardConstraint(HardConstraint):
                 if madrich.ken == educative_ken:
                     return False
         return True
-            
-        
+
+
 class GenderRandomSoftConstraint(RandomSoftConstraint):
     def calculate_score(self, educatives, seminar):
         total_score = 0
         for camp in seminar.camps:
             for hug in camp.hugs:
-                educatives_count = hug.get_educative_count()
-                male_count = hug.get_male_count()
+                educatives_count = session.query(Educative).filter(Educative.hug == hug).count()
+                male_count = session.query(Educative).filter(Educative.hug ==
+                            hug).filter(Educative.gender == MALE).count()
                 gender_score = (male_count ** 2) * self.score
                 female_count = educatives_count - male_count
                 gender_score += (female_count ** 2) * self.score
@@ -37,8 +41,8 @@ class SizeRandomSoftConstraint(RandomSoftConstraint):
         total_score = 0
         for camp in seminar.camps:
             for hug in camp.hugs:
-                educative_count = hug.get_educative_count()
-                total_score += (educative_count ** 2) * self.score
+                educatives_count = session.query(Educative).filter(Educative.hug == hug).count()
+                total_score += (educatives_count ** 2) * self.score
         return total_score
 
 
@@ -48,9 +52,12 @@ class KenRandomSoftConstraint(RandomSoftConstraint):
         score = self.score
         for camp in seminar.camps:
             for hug in camp.hugs:
-                for ken, count in hug.get_kens_count().iteritems():
+                kens_count = session.query(Educative.ken_id, func.count(Educative.ken_id)).filter(Educative.hug_id == hug.id).group_by(Educative.ken_id).all()
+                for ken in kens_count:
+                    count = ken[1]
                     total_score += (count ** 2) * score
-                for second_ken, count in hug.get_second_kens_count().iteritems():
-                    if second_ken != None:
-                        total_score += (count ** 2) * score
+                second_kens_count = session.query(Educative.second_ken_id, func.count(Educative.second_ken_id)).filter(Educative.hug_id == hug.id).group_by(Educative.second_ken_id).all()
+                for second_ken in second_kens_count:
+                    if second_ken is not None:
+                        total_score += (second_ken[1] ** 2) * score
         return total_score

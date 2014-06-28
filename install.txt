@@ -1,0 +1,13 @@
+install mingw with basic and c++
+add its bin to the path
+create distutils.cfg file in c:\python27\lib\distutils with:
+[build]
+
+compiler=mingw32
+
+remove in cygwinccompiler.py all -mno-cygwin
+
+install sqlalchemy
+install elixir
+edit c:\python27\lib\site-packages\elixir\entity.py and replace ScopedSession import with "scoped_session as ScopedSession"
+install dogpile

@@ -1,12 +1,12 @@
 
 
-from liron.pojos.constants import MALE, FEMALE, VEGETARIAN, MEAT
-from liron.pojos.persons import Educative, Madrich
-from liron.pojos.seminar import Ken, Seminar, Camp, Hug
+from liron.models.constants import MALE, FEMALE, VEGETARIAN, MEAT
+from liron.models.persons import Educative, Madrich
+from liron.models.seminar import Ken, Seminar, Camp, Hug
 from liron.sort.default_constraints import GenderRandomSoftConstraint, \
     SizeRandomSoftConstraint, KenRandomSoftConstraint, VegetarianHardConstraint, \
     MadrichHardConstraint
-import liron.pojos.model  # @UnusedImport
+import liron.models  # @UnusedImport
 from liron.sort.sorter import Sorter
 import random
 import time
@@ -14,100 +14,7 @@ import unittest
 
 
 
-def create_small_educatives_and_seminar():
-    misgav = Ken()
-    misgav.name = 'Misgav'
-    
-    karmiel = Ken()
-    karmiel.name = 'Karmiel'
-    
-    aviad = Educative()
-    aviad.gender = MALE
-    aviad.first_name = "Aviad"
-    aviad.ken = misgav
-    
-    naama = Educative()
-    naama.gender = FEMALE
-    naama.first_name = "Naama"
-    naama.ken = karmiel
-    
-    inbar = Educative()
-    inbar.gender = FEMALE
-    inbar.first_name = "Inbar"
-    inbar.ken = misgav
-    
-    alon = Educative()
-    alon.gender = MALE
-    alon.first_name = "Alon"
-    alon.ken = karmiel
-    
-    seminar = Seminar()
-    camp = Camp()
-    camp.seminar = seminar
-    
-    hug1 = Hug()
-    hug1.name = "Hug1"
-    hug1.camp = camp
-    hug2 = Hug()
-    hug2.name = "Hug2"
-    hug2.camp = camp
-    
-    return [aviad, naama, inbar, alon], seminar
-    
-def create_large_educatives_and_seminar():
-    NUMBER_OF_KENS = 50
-    NUMBER_OF_EDUCATIVES = 900
-    NUMBER_OF_HUGS = 45
-    NUMBER_OF_VEGETARIAN_HUGS = 8
-    
-    kens = []
-    for i in xrange(NUMBER_OF_KENS):
-        ken = Ken()
-        ken.name = "Ken " + str(i)
-        kens.append(ken)
-        
-    educatives = []
-    for i in xrange(NUMBER_OF_EDUCATIVES):
-        educative = Educative()
-        if random.randint(0, 2) == 0:
-            educative.gender = MALE
-        else:
-            educative.gender = FEMALE
-        if random.randint(0, 9) == 0:
-            educative.food = VEGETARIAN
-        else:
-            educative.food = MEAT
-        educative.first_name = "Educative"
-        educative.last_name = str(i)
-        educative.ken = kens[random.randint(0, NUMBER_OF_KENS - 1)]
-        educatives.append(educative)
-    
-    seminar = Seminar()
-    seminar.name = 'Seminar'
-    
-    camp1, camp2, camp3 = Camp(), Camp(), Camp()
-    camp1.name = 'Camp 1'
-    camp2.name = 'Camp 2'
-    camp3.name = 'Camp3'
-    seminar.camps += [camp1, camp2, camp3]
-    
-    hugs = []
-    for i in xrange(NUMBER_OF_HUGS):
-        hug = Hug()
-        hug.name = "Hug " + str(i)
-        hug.camp = seminar.camps[i % 3]
-        if i < NUMBER_OF_VEGETARIAN_HUGS:
-            hug.food = VEGETARIAN
-        hugs.append(hug)
-        for j in xrange(random.randint(1, 2)):
-            madrich = Madrich()
-            madrich.first_name = "Madrich"
-            madrich.last_name = str(j)
-            madrich.ken = kens[random.randint(0, NUMBER_OF_KENS - 1)]
-            hug.madrichim.append(madrich)
-    
-    return educatives, seminar
-    
+
 def create_soft_constraints():
     gender = GenderRandomSoftConstraint(10, 10, 10)
     size = SizeRandomSoftConstraint(100, 100, 100)
@@ -120,9 +27,133 @@ def create_hard_constraints():
     return [vegetarian, madrich]
     
 class SortTest(unittest.TestCase):
-    
+
+    @classmethod
+    def setUpClass(cls):
+        from liron.models import session, engine, Base
+        cls.session = session
+        Base.metadata.create_all(engine)
+
+    @classmethod
+    def tearDown(cls):
+        cls.session.rollback()
+
+    @classmethod
+    def create_small_educatives_and_seminar(cls):
+        misgav = Ken()
+        misgav.name = 'Misgav'
+        cls.session.add(misgav)
+
+        karmiel = Ken()
+        karmiel.name = 'Karmiel'
+        cls.session.add(karmiel)
+
+        aviad = Educative()
+        aviad.gender = MALE
+        aviad.first_name = "Aviad"
+        aviad.ken = misgav
+        cls.session.add(aviad)
+
+        naama = Educative()
+        naama.gender = FEMALE
+        naama.first_name = "Naama"
+        naama.ken = karmiel
+        cls.session.add(naama)
+
+        inbar = Educative()
+        inbar.gender = FEMALE
+        inbar.first_name = "Inbar"
+        inbar.ken = misgav
+        cls.session.add(inbar)
+
+        alon = Educative()
+        alon.gender = MALE
+        alon.first_name = "Alon"
+        alon.ken = karmiel
+        cls.session.add(alon)
+
+        seminar = Seminar()
+        cls.session.add(seminar)
+
+        camp = Camp()
+        camp.seminar = seminar
+        cls.session.add(camp)
+
+        hug1 = Hug()
+        hug1.name = "Hug1"
+        hug1.camp = camp
+        cls.session.add(hug1)
+
+        hug2 = Hug()
+        hug2.name = "Hug2"
+        hug2.camp = camp
+        cls.session.add(hug2)
+
+        return [aviad, naama, inbar, alon], seminar
+
+    @classmethod
+    def create_large_educatives_and_seminar(cls):
+        NUMBER_OF_KENS = 50
+        NUMBER_OF_EDUCATIVES = 900
+        NUMBER_OF_HUGS = 45
+        NUMBER_OF_VEGETARIAN_HUGS = 8
+
+        kens = []
+        for i in xrange(NUMBER_OF_KENS):
+            ken = Ken()
+            ken.name = "Ken " + str(i)
+            kens.append(ken)
+            cls.session.add(ken)
+
+        educatives = []
+        for i in xrange(NUMBER_OF_EDUCATIVES):
+            educative = Educative()
+            if random.randint(0, 2) == 0:
+                educative.gender = MALE
+            else:
+                educative.gender = FEMALE
+            if random.randint(0, 9) == 0:
+                educative.food = VEGETARIAN
+            else:
+                educative.food = MEAT
+            educative.first_name = "Educative"
+            educative.last_name = str(i)
+            educative.ken = kens[random.randint(0, NUMBER_OF_KENS - 1)]
+            educatives.append(educative)
+            cls.session.add(educative)
+
+        seminar = Seminar()
+        seminar.name = 'Seminar'
+        cls.session.add(seminar)
+
+        camp1, camp2, camp3 = Camp(), Camp(), Camp()
+        camp1.name = 'Camp 1'
+        camp2.name = 'Camp 2'
+        camp3.name = 'Camp3'
+        seminar.camps += [camp1, camp2, camp3]
+        [cls.session.add(c) for c in seminar.camps]
+
+        hugs = []
+        for i in xrange(NUMBER_OF_HUGS):
+            hug = Hug()
+            hug.name = "Hug " + str(i)
+            hug.camp = seminar.camps[i % 3]
+            if i < NUMBER_OF_VEGETARIAN_HUGS:
+                hug.food = VEGETARIAN
+            hugs.append(hug)
+            cls.session.add(hug)
+            for j in xrange(random.randint(1, 2)):
+                madrich = Madrich()
+                madrich.first_name = "Madrich"
+                madrich.last_name = str(j)
+                madrich.ken = kens[random.randint(0, NUMBER_OF_KENS - 1)]
+                hug.madrichim.append(madrich)
+                cls.session.add(madrich)
+
+        return educatives, seminar
+
     def test_sanity(self):
-        educatives, seminar = create_small_educatives_and_seminar()
+        educatives, seminar = self.create_small_educatives_and_seminar()
         hard_constraints = create_hard_constraints()
         soft_constraints = create_soft_constraints()
         Sorter(soft_constraints, hard_constraints).assign_educatives_with_constant_score(educatives, seminar)
@@ -134,10 +165,11 @@ class SortTest(unittest.TestCase):
         assert(len(seminar.camps[0].hugs[0].educatives) == len(seminar.camps[0].hugs[1].educatives))
     
     def test_stress(self):
-        educatives, seminar = create_large_educatives_and_seminar()
+        educatives, seminar = self.create_large_educatives_and_seminar()
         hard_constraints = create_hard_constraints()
         soft_constraints = create_soft_constraints()
         print "Started stress test at " + time.ctime()
+        self.session.flush()
         Sorter(soft_constraints, hard_constraints).assign_educatives_with_constant_score(educatives, seminar)
         print "Ended stress test at " + time.ctime()
         return educatives, seminar

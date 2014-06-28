@@ -2,9 +2,9 @@
 
 import random
 import time
-from liron.pojos.persons import Educative
-from liron.pojos.persons import Person
-from liron.pojos.seminar import *
+from liron.models.persons import Educative
+from liron.models.persons import Person
+from liron.models.seminar import *
 
 MAX_TIME = 1 #* 60 # One minute
 MAX_GENDER_SCORE = 5000
@@ -19,6 +19,7 @@ class Sorter():
         
     def assign_educatives_with_constant_score(self, educatives, seminar):
         for educative in educatives:
+            print "Assigning educative", educative
             best_hug = self.find_best_hug(educative, educatives, seminar)
             educative.hug = best_hug
 
@@ -28,6 +29,7 @@ class Sorter():
         previous_hug = current_educative.hug
         for camp in seminar.camps:
             for hug in camp.hugs:
+                print "Checking hug", hug
                 current_educative.hug = hug
                 is_valid = self.check_is_valid(current_educative, educatives, seminar)
                 if is_valid:
