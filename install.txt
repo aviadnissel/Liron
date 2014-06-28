@@ -10,4 +10,3 @@ remove in cygwinccompiler.py all -mno-cygwin
 install sqlalchemy
 install elixir
 edit c:\python27\lib\site-packages\elixir\entity.py and replace ScopedSession import with "scoped_session as ScopedSession"
-install dogpile

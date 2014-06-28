@@ -29,7 +29,6 @@ class Sorter():
         previous_hug = current_educative.hug
         for camp in seminar.camps:
             for hug in camp.hugs:
-                print "Checking hug", hug
                 current_educative.hug = hug
                 is_valid = self.check_is_valid(current_educative, educatives, seminar)
                 if is_valid:

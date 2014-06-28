@@ -24,7 +24,7 @@ def create_hard_constraints():
     madrich = MadrichHardConstraint()
     return [vegetarian, madrich]
     
-class SortTest(unittest.TestCase):
+class SortTest():
 
     @classmethod
     def setUpClass(cls):
@@ -91,10 +91,10 @@ class SortTest(unittest.TestCase):
 
     @classmethod
     def create_large_educatives_and_seminar(cls):
-        NUMBER_OF_KENS = 50
-        NUMBER_OF_EDUCATIVES = 900
-        NUMBER_OF_HUGS = 45
-        NUMBER_OF_VEGETARIAN_HUGS = 8
+        NUMBER_OF_KENS = 5
+        NUMBER_OF_EDUCATIVES = 90
+        NUMBER_OF_HUGS = 5
+        NUMBER_OF_VEGETARIAN_HUGS = 2
 
         kens = []
         for i in xrange(NUMBER_OF_KENS):
@@ -154,7 +154,6 @@ class SortTest(unittest.TestCase):
         educatives, seminar = self.create_small_educatives_and_seminar()
         hard_constraints = create_hard_constraints()
         soft_constraints = create_soft_constraints()
-        self.session.flush()
         Sorter(soft_constraints, hard_constraints).assign_educatives_with_constant_score(educatives, seminar)
         print "Sanity check:"
         print seminar.camps[0].hugs[0].educatives
@@ -165,10 +164,16 @@ class SortTest(unittest.TestCase):
     
     def test_stress(self):
         educatives, seminar = self.create_large_educatives_and_seminar()
-        self.session.flush()
         hard_constraints = create_hard_constraints()
         soft_constraints = create_soft_constraints()
         print "Started stress test at " + time.ctime()
+        self.session.flush()
         Sorter(soft_constraints, hard_constraints).assign_educatives_with_constant_score(educatives, seminar)
         print "Ended stress test at " + time.ctime()
         return educatives, seminar
+
+if __name__ == '__main__':
+    t = SortTest()
+    t.setUpClass()
+    t.test_stress()
+    t.tearDown()
