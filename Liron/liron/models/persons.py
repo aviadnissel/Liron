@@ -21,6 +21,10 @@ class Person(Base):
     food = deferred(Column(Enum(MEAT, VEGETARIAN), index=True))
     type = Column(String(20), index=True)
 
+    ken_id = deferred(Column(Integer, ForeignKey('ken.id'), index=True))
+    second_ken_id = deferred(Column(Integer, ForeignKey('second_ken.id'), index=True))
+    hug_id = deferred(Column(Integer, ForeignKey('hug.id'), index=True))
+
     __mapper_args__ = {
         'polymorphic_identity': 'person',
         'polymorphic_on': type
@@ -33,12 +37,6 @@ class Educative(Person):
     """
     An educative in the seminar.
     """
-    __tablename__ = 'educative'
-
-    id = Column(Integer, ForeignKey('person.id'), primary_key=True, index=True)
-    ken_id = deferred(Column(Integer, ForeignKey('ken.id')))
-    second_ken_id = deferred(Column(Integer, ForeignKey('second_ken.id')))
-    hug_id = deferred(Column(Integer, ForeignKey('hug.id')))
 
     __mapper_args__ = {
         'polymorphic_identity': 'educative',
@@ -49,12 +47,7 @@ class Madrich(Person):
     """
     A madrich in the seminar.
     """
-    __tablename__ = 'madrich'
 
-    id = Column(Integer, ForeignKey('person.id'), primary_key=True, index=True)
-    ken_id = deferred(Column(Integer, ForeignKey('ken.id'), index=True))
-    second_ken_id = deferred(Column(Integer, ForeignKey('second_ken.id'), index=True))
-    hug_id = deferred(Column(Integer, ForeignKey('hug.id'), index=True))
 
     __mapper_args__ = {
         'polymorphic_identity': 'madrich',
