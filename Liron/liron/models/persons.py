@@ -2,7 +2,7 @@
 
 
 from sqlalchemy import *
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, deferred
 from liron.models import Base
 from sqlalchemy.ext.declarative import declarative_base
 from liron.models.constants import *
@@ -15,10 +15,10 @@ class Person(Base):
     __tablename__ = 'person'
 
     id = Column(Integer, primary_key=True, index=True)
-    first_name = Column(Unicode(60))
-    last_name = Column(Unicode(60))
-    gender = Column(Enum(MALE, FEMALE), index=True)
-    food = Column(Enum(MEAT, VEGETARIAN), index=True)
+    first_name = deferred(Column(Unicode(60)))
+    last_name = deferred(Column(Unicode(60)))
+    gender = deferred(Column(Enum(MALE, FEMALE), index=True))
+    food = deferred(Column(Enum(MEAT, VEGETARIAN), index=True))
     type = Column(String(20), index=True)
 
     __mapper_args__ = {
@@ -36,9 +36,9 @@ class Educative(Person):
     __tablename__ = 'educative'
 
     id = Column(Integer, ForeignKey('person.id'), primary_key=True, index=True)
-    ken_id = Column(Integer, ForeignKey('ken.id'))
-    second_ken_id = Column(Integer, ForeignKey('second_ken.id'))
-    hug_id = Column(Integer, ForeignKey('hug.id'))
+    ken_id = deferred(Column(Integer, ForeignKey('ken.id')))
+    second_ken_id = deferred(Column(Integer, ForeignKey('second_ken.id')))
+    hug_id = deferred(Column(Integer, ForeignKey('hug.id')))
 
     __mapper_args__ = {
         'polymorphic_identity': 'educative',
@@ -52,9 +52,9 @@ class Madrich(Person):
     __tablename__ = 'madrich'
 
     id = Column(Integer, ForeignKey('person.id'), primary_key=True, index=True)
-    ken_id = Column(Integer, ForeignKey('ken.id'), index=True)
-    second_ken_id = Column(Integer, ForeignKey('second_ken.id'), index=True)
-    hug_id = Column(Integer, ForeignKey('hug.id'), index=True)
+    ken_id = deferred(Column(Integer, ForeignKey('ken.id'), index=True))
+    second_ken_id = deferred(Column(Integer, ForeignKey('second_ken.id'), index=True))
+    hug_id = deferred(Column(Integer, ForeignKey('hug.id'), index=True))
 
     __mapper_args__ = {
         'polymorphic_identity': 'madrich',

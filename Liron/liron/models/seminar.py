@@ -12,14 +12,14 @@ class Seminar(Base):
     __tablename__ = 'seminar'
 
     id = Column(Integer, primary_key=True)
-    name = Column(Unicode(60))
+    name = deferred(Column(Unicode(60)))
     camps = relationship('Camp', backref='seminar')
 
 class Camp(Base):
     __tablename__ = 'camp'
 
     id = Column(Integer, primary_key=True)
-    name = Column(Unicode(60))
+    name = deferred(Column(Unicode(60)))
     hugs = relationship('Hug', backref='camp')
     seminar_id = Column(Integer, ForeignKey('seminar.id'))
 
@@ -30,11 +30,11 @@ class Hug(Base):
     __tablename__ = 'hug'
 
     id = Column(Integer, primary_key=True)
-    name = Column(Unicode(60))
+    name = deferred(Column(Unicode(60)))
     educatives = relationship('Educative', backref='hug')
     madrichim = relationship('Madrich', backref='hug')
-    camp_id = Column(Integer, ForeignKey('camp.id'))
-    food = Column(Enum(MEAT, VEGETARIAN))
+    camp_id = deferred(Column(Integer, ForeignKey('camp.id')))
+    food = deferred(Column(Enum(MEAT, VEGETARIAN)))
     
     def __init__(self):
         self.kens_count = {}
@@ -54,8 +54,8 @@ class AbstractKen(Base):
     __tablename__ = 'abstract_ken'
 
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(Unicode(40))
-    type = Column(String(20), index=True)
+    name = deferred(Column(Unicode(40)))
+    type = deferred(Column(String(20), index=True))
 
     __mapper_args__ = {
         'polymorphic_on': type,

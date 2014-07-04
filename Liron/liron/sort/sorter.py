@@ -1,16 +1,8 @@
 ﻿# -*- coding: utf-8 -*-
 
 import random
-import time
-from liron.models.persons import Educative
-from liron.models.persons import Person
-from liron.models.seminar import *
-
-MAX_TIME = 1 #* 60 # One minute
-MAX_GENDER_SCORE = 5000
-MAX_SIZE_SCORE = 100000
-MAX_KEN_SCORE = 1000
-MAX_MAHOZ_SCORE = 500
+HUGS_CHOICE_PERC = 0.5
+MIN_CHOICE_HUGS = 3
 
 class Sorter():
     def __init__(self, soft_constraints, hard_constraints):
@@ -27,15 +19,24 @@ class Sorter():
         min_score = 2 ** 100
         best_hug = None
         previous_hug = current_educative.hug
+        hugs = []
         for camp in seminar.camps:
-            for hug in camp.hugs:
-                current_educative.hug = hug
-                is_valid = self.check_is_valid(current_educative, educatives, seminar)
-                if is_valid:
-                    score = self.calculate_score(educatives, seminar)
-                    if score < min_score:
-                        min_score = score
-                        best_hug = hug
+            hugs += camp.hugs
+        chosen_hugs = ()
+        hugs_to_choose = int(max(len(hugs) * HUGS_CHOICE_PERC, MIN_CHOICE_HUGS))
+        for i in xrange(hugs_to_choose):
+            if len(hugs) > 0:
+                chosen_hug = random.choice(hugs)
+                chosen_hugs += (chosen_hug,)
+                hugs.remove(chosen_hug)
+        for hug in chosen_hugs:
+            current_educative.hug = hug
+            is_valid = self.check_is_valid(current_educative, educatives, seminar)
+            if is_valid:
+                score = self.calculate_score(educatives, seminar)
+                if score < min_score:
+                    min_score = score
+                    best_hug = hug
         current_educative.hug = previous_hug
         return best_hug
     

@@ -12,14 +12,15 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Liron$Unittest_SortTest_test_stress.coverage" NAME="Unittest SortTest.test_stress Coverage Results" MODIFIED="1403948483158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liron/tests/sort" />
+    <SUITE FILE_PATH="coverage/Liron$hand_test.coverage" NAME="hand_test Coverage Results" MODIFIED="1404507725040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liron/tests/sort" />
+    <SUITE FILE_PATH="coverage/Liron$Unittest_SortTest_test_stress.coverage" NAME="Unittest SortTest.test_stress Coverage Results" MODIFIED="1404501069172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liron/tests/sort" />
     <SUITE FILE_PATH="coverage/Liron$Unittests_in_constraints_test.coverage" NAME="Unittests in constraints_test Coverage Results" MODIFIED="1403971863065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liron/tests/sort" />
-    <SUITE FILE_PATH="coverage/Liron$Unittest_SortTest_test_sanity.coverage" NAME="Unittest SortTest.test_sanity Coverage Results" MODIFIED="1403972059080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liron/tests/sort" />
+    <SUITE FILE_PATH="coverage/Liron$Unittest_SortTest_test_sanity.coverage" NAME="Unittest SortTest.test_sanity Coverage Results" MODIFIED="1404507715375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liron/tests/sort" />
     <SUITE FILE_PATH="coverage/Liron$sort_test.coverage" NAME="sort_test Coverage Results" MODIFIED="1403897638936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liron/tests/sort" />
-    <SUITE FILE_PATH="coverage/Liron$db_setup__1_.coverage" NAME="db_setup (1) Coverage Results" MODIFIED="1403947478051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liron/models" />
     <SUITE FILE_PATH="coverage/Liron$Unittest_TestConstraints_test_ken_constant.coverage" NAME="Unittest TestConstraints.test_ken_constant Coverage Results" MODIFIED="1403964774690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liron/tests/sort" />
-    <SUITE FILE_PATH="coverage/Liron$db_setup.coverage" NAME="db_setup Coverage Results" MODIFIED="1403901924107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liron/pojos" />
-    <SUITE FILE_PATH="coverage/Liron$Unittests_in_sort_test.coverage" NAME="Unittests in sort_test Coverage Results" MODIFIED="1403971724166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liron/tests/sort" />
+    <SUITE FILE_PATH="coverage/Liron$db_setup__1_.coverage" NAME="db_setup (1) Coverage Results" MODIFIED="1403947478051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liron/models" />
+    <SUITE FILE_PATH="coverage/Liron$db_setup.coverage" NAME="db_setup Coverage Results" MODIFIED="1404507684816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liron/models" />
+    <SUITE FILE_PATH="coverage/Liron$Unittests_in_sort_test.coverage" NAME="Unittests in sort_test Coverage Results" MODIFIED="1404505949316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liron/tests/sort" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -36,10 +37,8 @@
       <file leaf-file-name="default_constraints.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/liron/sort/default_constraints.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="62" selection-start="1070" selection-end="1070" vertical-scroll-proportion="0.0" vertical-offset="301" max-vertical-offset="986">
-              <folding>
-                <element signature="e#0#71#0" expanded="true" />
-              </folding>
+            <state line="27" column="44" selection-start="1052" selection-end="1052" vertical-scroll-proportion="0.0" vertical-offset="174" max-vertical-offset="918">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -47,10 +46,8 @@
       <file leaf-file-name="sorter.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/liron/sort/sorter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="41" selection-start="1028" selection-end="1028" vertical-scroll-proportion="0.0" vertical-offset="366" max-vertical-offset="986">
-              <folding>
-                <element signature="e#25#38#0" expanded="true" />
-              </folding>
+            <state line="17" column="28" selection-start="568" selection-end="569" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1003">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -58,29 +55,40 @@
       <file leaf-file-name="constraints_test.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/liron/tests/sort/constraints_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="4649" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2805">
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="persons.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/liron/models/persons.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="6" selection-start="778" selection-end="778" vertical-scroll-proportion="0.19948186" vertical-offset="382" max-vertical-offset="1054">
+            <state line="18" column="29" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="2669">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sort_test.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/liron/tests/sort/sort_test.py">
+      <file leaf-file-name="__init__.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/liron/models/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="30" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3060">
+            <state line="6" column="77" selection-start="238" selection-end="238" vertical-scroll-proportion="0.2642487" vertical-offset="0" max-vertical-offset="386">
               <folding>
-                <element signature="e#0#65#0" expanded="true" />
+                <element signature="e#0#55#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="persons.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/liron/models/persons.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="22" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1122">
+              <folding>
+                <element signature="e#27#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="seminar.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/liron/models/seminar.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="84" column="26" selection-start="2215" selection-end="2215" vertical-scroll-proportion="0.0" vertical-offset="1263" max-vertical-offset="1649">
+              <folding>
+                <element signature="e#25#49#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -89,18 +97,7 @@
       <file leaf-file-name="hand_test.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/liron/tests/sort/hand_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="37" selection-start="2541" selection-end="2541" vertical-scroll-proportion="0.0" vertical-offset="1377" max-vertical-offset="3145">
-              <folding>
-                <element signature="e#0#65#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="constraints.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/liron/sort/constraints.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="0" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.0" vertical-offset="417" max-vertical-offset="799">
+            <state line="157" column="38" selection-start="4657" selection-end="4657" vertical-scroll-proportion="0.0" vertical-offset="2310" max-vertical-offset="2975">
               <folding />
             </state>
           </provider>
@@ -124,13 +121,13 @@
         <option value="$PROJECT_DIR$/liron/pojos/db_setup.py" />
         <option value="$PROJECT_DIR$/liron/models/db_setup.py" />
         <option value="$PROJECT_DIR$/liron/tests/sort/constraints_test.py" />
-        <option value="$PROJECT_DIR$/liron/models/persons.py" />
-        <option value="$PROJECT_DIR$/liron/models/__init__.py" />
-        <option value="$PROJECT_DIR$/liron/models/seminar.py" />
-        <option value="$PROJECT_DIR$/liron/sort/sorter.py" />
         <option value="$PROJECT_DIR$/liron/tests/sort/sort_test.py" />
         <option value="$PROJECT_DIR$/liron/sort/default_constraints.py" />
+        <option value="$PROJECT_DIR$/liron/sort/sorter.py" />
         <option value="$PROJECT_DIR$/liron/tests/sort/hand_test.py" />
+        <option value="$PROJECT_DIR$/liron/models/seminar.py" />
+        <option value="$PROJECT_DIR$/liron/models/persons.py" />
+        <option value="$PROJECT_DIR$/liron/models/__init__.py" />
       </list>
     </option>
   </component>
@@ -282,18 +279,18 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings />
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittest SortTest.test_sanity">
+  <component name="RunManager" selected="Python.hand_test">
     <configuration default="false" name="Unittests in sort_test" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -306,33 +303,6 @@
       <module name="Liron" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/liron/tests/sort/sort_test.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <RunnerSettings RunnerId="PyDebugRunner" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PyDebugRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in constraints_test" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/liron/tests/sort" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Liron" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/liron/tests/sort/constraints_test.py" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
@@ -375,33 +345,6 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestConstraints.test_ken_constant" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/liron/tests/sort" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Liron" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/liron/tests/sort/constraints_test.py" />
-      <option name="CLASS_NAME" value="TestConstraints" />
-      <option name="METHOD_NAME" value="test_ken_constant" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <RunnerSettings RunnerId="PyDebugRunner" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PyDebugRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
     <configuration default="false" name="Unittest SortTest.test_sanity" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -423,6 +366,44 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="hand_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/liron/tests/sort" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Liron" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/liron/tests/sort/hand_test.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="db_setup" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/liron/models" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Liron" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/liron/models/db_setup.py" />
+      <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
@@ -511,9 +492,6 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
-      <method />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -535,6 +513,9 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -579,17 +560,17 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in sort_test" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in constraints_test" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest SortTest.test_stress" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestConstraints.test_ken_constant" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest SortTest.test_sanity" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest SortTest.test_stress" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest SortTest.test_sanity" />
+      <item index="3" class="java.lang.String" itemvalue="Python.hand_test" />
+      <item index="4" class="java.lang.String" itemvalue="Python.db_setup" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest SortTest.test_sanity" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in constraints_test" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in sort_test" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestConstraints.test_ken_constant" />
+        <item index="0" class="java.lang.String" itemvalue="Python.hand_test" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest SortTest.test_sanity" />
+        <item index="2" class="java.lang.String" itemvalue="Python.db_setup" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in sort_test" />
         <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest SortTest.test_stress" />
       </list>
     </recent_temporary>
@@ -627,10 +608,9 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19469696" sideWeight="0.69949067" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19772728" sideWeight="0.69949067" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39898133" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31748727" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -639,6 +619,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.60101867" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -659,9 +640,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18484849" sideWeight="0.6808149" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31918505" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31918505" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -671,6 +652,7 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="false" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -685,32 +667,14 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/liron/sort/constraints.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="20" selection-start="759" selection-end="759" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="799">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/sqlalchemy/sql/schema.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3295" column="39" selection-start="128638" selection-end="128638" vertical-scroll-proportion="0.0" vertical-offset="55567" max-vertical-offset="57851">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/site-packages/elixir/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="4" selection-start="3012" selection-end="3012" vertical-scroll-proportion="0.22202487" vertical-offset="1048" max-vertical-offset="1870">
-          <folding />
-        </state>
+        <state line="84" column="4" selection-start="3012" selection-end="3012" vertical-scroll-proportion="0.22202487" vertical-offset="1048" max-vertical-offset="1870" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/liron/tests/sort/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="563">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="563" />
       </provider>
     </entry>
     <entry file="file://C:/Python27/Lib/site-packages/sqlalchemy/orm/instrumentation.py">
@@ -725,85 +689,89 @@
     </entry>
     <entry file="file://C:/Python27/Lib/unittest/case.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="333" column="0" selection-start="11054" selection-end="11054" vertical-scroll-proportion="0.29066667" vertical-offset="5331" max-vertical-offset="18173">
+        <state line="333" column="0" selection-start="11054" selection-end="11054" vertical-scroll-proportion="0.29066667" vertical-offset="5331" max-vertical-offset="18173" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/liron/tests/sort/sort_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="30" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3060">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/liron/models/__init__.py">
+    <entry file="file://$PROJECT_DIR$/liron/sort/constraints.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="77" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
+        <state line="41" column="0" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.8188277" vertical-offset="236" max-vertical-offset="799">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/sqlalchemy/sql/schema.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="898" column="20" selection-start="36717" selection-end="36722" vertical-scroll-proportion="0.33203125" vertical-offset="14841" max-vertical-offset="57851">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/liron/sort/sorter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="28" selection-start="568" selection-end="569" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1003">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/sqlalchemy/ext/declarative/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="299" column="0" selection-start="11952" selection-end="11952" vertical-scroll-proportion="0.3316062" vertical-offset="4751" max-vertical-offset="8993">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/liron/tests/sort/hand_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="157" column="38" selection-start="4657" selection-end="4657" vertical-scroll-proportion="0.0" vertical-offset="2310" max-vertical-offset="2975">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/liron/sort/default_constraints.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="44" selection-start="1052" selection-end="1052" vertical-scroll-proportion="0.0" vertical-offset="174" max-vertical-offset="918">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/liron/models/seminar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="33" selection-start="962" selection-end="962" vertical-scroll-proportion="-1.7591623" vertical-offset="1267" max-vertical-offset="1649">
+        <state line="84" column="26" selection-start="2215" selection-end="2215" vertical-scroll-proportion="0.0" vertical-offset="1263" max-vertical-offset="1649">
           <folding>
             <element signature="e#25#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/liron/sort/sorter.py">
+    <entry file="file://$PROJECT_DIR$/liron/models/persons.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="41" selection-start="1028" selection-end="1028" vertical-scroll-proportion="0.0" vertical-offset="366" max-vertical-offset="986">
+        <state line="56" column="22" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1122">
           <folding>
-            <element signature="e#25#38#0" expanded="true" />
+            <element signature="e#27#51#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/liron/sort/constraints.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.0" vertical-offset="417" max-vertical-offset="799">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/liron/tests/sort/constraints_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="4649" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2805">
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/liron/tests/sort/sort_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="30" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3060">
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/liron/tests/sort/hand_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="37" selection-start="2541" selection-end="2541" vertical-scroll-proportion="0.0" vertical-offset="1377" max-vertical-offset="3145">
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/liron/sort/default_constraints.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="62" selection-start="1070" selection-end="1070" vertical-scroll-proportion="0.0" vertical-offset="301" max-vertical-offset="986">
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/liron/models/persons.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="6" selection-start="778" selection-end="778" vertical-scroll-proportion="0.19948186" vertical-offset="382" max-vertical-offset="1054">
+        <state line="18" column="29" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="2669">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/liron/models/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="77" selection-start="238" selection-end="238" vertical-scroll-proportion="0.2642487" vertical-offset="0" max-vertical-offset="386">
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
