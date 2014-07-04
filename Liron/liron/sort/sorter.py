@@ -1,7 +1,7 @@
 ﻿# -*- coding: utf-8 -*-
 
 import random
-HUGS_CHOICE_PERC = 0.5
+HUGS_CHOICE_PERC = 0.2
 MIN_CHOICE_HUGS = 3
 
 class Sorter():
