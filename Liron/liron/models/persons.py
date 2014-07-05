@@ -17,6 +17,7 @@ class Person(Base):
     id = Column(Integer, primary_key=True, index=True)
     first_name = deferred(Column(Unicode(60)))
     last_name = deferred(Column(Unicode(60)))
+    tz = deferred(Column(String(12)))
     gender = deferred(Column(Enum(MALE, FEMALE), index=True))
     food = deferred(Column(Enum(MEAT, VEGETARIAN), index=True))
     type = Column(String(20), index=True)
