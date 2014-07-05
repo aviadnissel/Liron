@@ -1,6 +1,7 @@
 ﻿# -*- coding: utf-8 -*-
 
 import random
+
 HUGS_CHOICE_PERC = 0.2
 MIN_CHOICE_HUGS = 3
 
@@ -11,15 +12,14 @@ class Sorter():
         
     def assign_educatives_with_constant_score(self, educatives, seminar):
         for educative in educatives:
-            print "Assigning educative", educative,
+            print "Assigning educative", educative
             best_hug = self.find_best_hug(educative, educatives, seminar)
             if best_hug is None:
                 # Last sanity check
-                raise RuntimeError("No hug found for educative %s!" % current_educative)
+                raise RuntimeError("No hug found for educative %s!" % educative)
             educative.hug = best_hug
 
     def find_best_hug(self, current_educative, educatives, seminar):
-
         previous_hug = current_educative.hug
         hugs = []
         for camp in seminar.camps:
